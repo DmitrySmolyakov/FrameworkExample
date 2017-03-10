@@ -115,16 +115,32 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # define SWIFT_UNAVAILABLE __attribute__((unavailable))
 #endif
 #if defined(__has_feature) && __has_feature(modules)
-@import ObjectiveC;
+@import UIKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
+@protocol DSSettingsViewControllerDelegate;
+@class NSBundle;
+@class NSCoder;
 
-SWIFT_CLASS("_TtC16FrameworkExample19PodFrameworkExample")
-@interface PodFrameworkExample : NSObject
-+ (void)printStringWithString:(NSString * _Nonnull)string;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+SWIFT_CLASS("_TtC25RegulaAssignmentFramework24DSSettingsViewController")
+@interface DSSettingsViewController : UITableViewController
+@property (nonatomic, weak) id <DSSettingsViewControllerDelegate> _Nullable delegate;
+- (void)viewDidLoad;
+- (void)setTitlesForOptionSegmentedControl:(NSArray<NSString *> * _Nonnull)titles selectedIndex:(NSInteger)selectedIndex;
+- (void)setTitleForOption:(NSString * _Nonnull)title;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UISegmentedControl;
+
+SWIFT_PROTOCOL("_TtP25RegulaAssignmentFramework32DSSettingsViewControllerDelegate_")
+@protocol DSSettingsViewControllerDelegate
+@optional
+- (void)settingsViewController:(DSSettingsViewController * _Nonnull)vc segmentedControlValueChanged:(UISegmentedControl * _Nonnull)segmentedControlValueChanged;
 @end
 
 #pragma clang diagnostic pop
