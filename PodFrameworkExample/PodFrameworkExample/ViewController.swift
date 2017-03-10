@@ -7,14 +7,12 @@
 //
 
 import UIKit
-import FrameworkExample
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        PodFrameworkExample.printString(string: "hello")
         
         // Do any additional setup after loading the view, typically from a nib.
     }
