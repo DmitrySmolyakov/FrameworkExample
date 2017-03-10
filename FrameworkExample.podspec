@@ -116,13 +116,13 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-   s.framework  = "RegulaAssignmentFramework"
+  # s.framework  = "RegulaAssignmentFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
   
-	s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
+  s.ios.vendored_frameworks = "RegulaAssignmentFramework.framework"
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
